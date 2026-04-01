@@ -89,7 +89,57 @@
 **마ージ 상태**: ✅ Merged (v1.0.0)
 
 ---
+### v1.0.1 - 2026-04-01 - Initial GitHub Push
 
+**対象ファイル**: Repository root
+
+**修正カテゴリ**: Infrastructure / Release
+
+**概要**:
+初回コミット完了、GitHub へのテストプッシュを実行。
+
+**プッシュ内容**:
+
+**リモートリポジトリ**: `https://github.com/iokawa-ryota/auto-profit-birth.git`  
+**ブランチ**: `master` (初期) / 本番運用時は `main` 推奨  
+**コミットハッシュ**: `d1e7945`  
+**コミットメッセージ**: `chore: Initial project setup with refactoring and investment strategy docs`
+
+**プッシュされたファイル** (24ファイル):
+- 📋 ドキュメント:
+  - `README.md` - プロジェクト技術仕様
+  - `purpose.md` - 投資戦略・運用方法
+  - `log.md` - 修正履歴 (このファイル)
+  - `REFACTORING.md` - リファクタリング詳細
+
+- 🔧 ソースコード:
+  - `src/App.jsx`, `src/components/**/*.jsx`
+  - `src/hooks/**/*.js`, `src/utils/**/*.js`
+  - `src/constants/strategy.js`, `src/styles/globals.css`
+
+- ⚙️ 設定:
+  - `package.json`, `vite.config.js`
+  - `tailwind.config.js`, `postcss.config.js`
+  - `.gitignore`, `index.html`
+
+**プッシュ結果**:
+```
+Enumerating objects: 32, done.
+Total 32 (delta 0), reused 0 (delta 0)
+[new branch] master -> master ✅
+branch 'master' set up to track 'origin/master'
+```
+
+**テスト確認**: ✅ GitHub 上で全ファイル確認済
+
+**ステータス**: ✅ Success
+
+**次のアクション**:
+- [ ] GitHub上でREADME表示確認
+- [ ] ブランチを `main` に統一する (オプション)
+- [ ] GitHub Actions の CI/CD 設定検討
+
+---
 ## 🔄 修正テンプレート（今後の記入用）
 
 ### v[X.X.X] - [YYYY-MM-DD] - [Author]
