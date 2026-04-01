@@ -100,9 +100,9 @@
 
 **プッシュ内容**:
 
-**リモートリポジトリ**: `https://github.com/iokawa-ryota/auto-profit-birth.git`  
-**ブランチ**: `master` (初期) / 本番運用時は `main` 推奨  
-**コミットハッシュ**: `d1e7945`  
+**リモートリポジトリ**: `https://github.com/iokawa-ryota/auto-profit-birth.git`
+**ブランチ**: `master` (初期) / 本番運用時は `main` 推奨
+**コミットハッシュ**: `d1e7945`
 **コミットメッセージ**: `chore: Initial project setup with refactoring and investment strategy docs`
 
 **プッシュされたファイル** (24ファイル):
@@ -140,6 +140,55 @@ branch 'master' set up to track 'origin/master'
 - [ ] GitHub Actions の CI/CD 設定検討
 
 ---
+
+### v1.0.2 - 2026-04-01 - Bugfix: index.html Cleanup
+
+**対象ファイル**: `index.html`
+
+**修正カテゴリ**: Bugfix
+
+**概要**:
+index.htmlに古いReactコンポーネントコードが残っていたため、クリーンアップしてエラーを解消。
+
+**問題**:
+```
+❌ エラー 4件 (修正前)
+  - "}" expected x2
+  - 空のルールセット警告 x2
+  - 原因: index.htmlにHTMLの後ろに古いJSXコードが混在
+```
+
+**修正内容**:
+
+**変更前**: HTMLエレメント後ろに不要なJSXコード（`{/* 右カラム (5/12) */}` 以降）
+
+**変更後**: 正しいHTMLのみ
+```html
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Profit Birth - Grid Trading Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>
+```
+
+**影響範囲**: 
+- `index.html` のみ修正
+- 実質的な機能変化なし（JSXはそもそも実行されていなかった）
+
+**テスト確認**: ✅ エラー 0件（完全解消）
+
+**ステータス**: ✅ Fixed
+
+---
+
 ## 🔄 修正テンプレート（今後の記入用）
 
 ### v[X.X.X] - [YYYY-MM-DD] - [Author]
